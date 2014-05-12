@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function setMaxDate()
+{
+var datelement = document.getElementById("Birthday");
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+if(mm == 0)
+	mm="01";
+if(mm<10)
+	mm="0"+mm;
+	
+var yyyy = today.getFullYear();
+datelement.max = yyyy+"-"+mm+"-"+dd;
+alert(datelement.max);
+}
+</script>
+</head>
+<body onload="setMaxDate()">
+Select Date : 	
+<input id="Birthday" class="form_textbox" type="date" placeholder="Birthday(mm/dd/yy)" />
+Search Google: <input type="search" name="googlesearch">
+<input id="startdate" name="startdate" min="2012-01-01" max="2013-01-01" type="date">
+
+</body>
+</html>
